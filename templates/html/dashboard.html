@@ -1,0 +1,47 @@
+{%extends 'html/login.html'%}
+{%load static%}
+{%block links%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/loginstyles.css'%}">
+{%endblock%}
+
+{%block content%}
+
+    <body>
+        <div class="page" id="login-pages" style="margin-top:20px;height:90%;">
+            {%block login-page%}
+            <div class="login" id="bookentry" style="padding-top: 20px;padding-left:100px;">
+                <h5 style="margin-left: 35%;">User Dashboard</h5>
+            
+                <div style="margin-left: 10%;">
+                    <div style="width:500px;">
+                        <div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <p id="email">{{user.email}}</p>
+                                </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" value="{{user.name}}" required>
+                            </div> 
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" class="form-control" id="password" value="{{user.password}}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="offid">OFFID</label>
+                                <p id="offid">{{user.offid}}</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-left: 30%;padding-top:2%;">
+                            <button class="btn btn-primary" onclick="savechanges();">Save Changes</button>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            {%endblock%}   
+        </div>
+    </body>
+    <script type="text/javascript" src="{%static 'js/mgmusers.js'%}"></script>
+{%endblock%}
+

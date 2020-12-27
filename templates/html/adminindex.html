@@ -1,0 +1,42 @@
+{%extends 'index.html'%}
+{%load static%}
+{%block links%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{%static 'css/adminindex.css'%}">
+{%endblock%}
+
+{%block content%}
+<body>
+    <navbar class="navbar navbar-expand-md fixed-top" style="background-color:#d99058;">
+         
+     <a class="navbar-brand nav-bar-text" href="#" style="font-size:25px;color:white;">Book Management System</a>
+         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+         
+           <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <p style="font-size:18px;color:white;padding-right:10px;padding-top:10px;" onclick="admindashboard();">Dashboard</p>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link nav-bar-text" href="../" style="font-size:18px;color:white;">Logout</a>
+             </li>
+            </ul>
+         </div>
+       </navbar>
+
+       {%block display%}
+              <p id="email">Hello Admin: <i id="emid">{{email}}</i></p>
+              <div id="dashboard">
+                    <div id="manage-books">
+                        <img src="{%static 'images/book.png'%}">
+                        <h3 style="margin-top: 30px;" onclick="gotobooks();">Manage Books</h3>
+                    </div>
+                    <div id="manage-users">
+                        <img src="{%static 'images/users.png'%}" style="width: 225px;height:225px;">
+                        <h3 style="margin-top: 30px;" onclick="gotousers();">Manage Users</h3>
+                    </div>
+              </div>
+      {%endblock%} 
+       </body>
+       <script type="text/javascript" src="{%static 'js/adminindex.js'%}"></script>
+       <script type="text/javascript" src="{%static 'js/mgmusers.js'%}"></script>
+{%endblock%}

@@ -1,0 +1,48 @@
+{%extends '../index.html'%}
+{%load static%}
+
+{%block links%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/loginstyles.css'%}">
+{%endblock%}
+
+{%block content%}
+
+    <body>
+        <div class="page" id="login-pages">
+            {%block login-page%}
+            <div class="login" id="user-login">
+                <h5>User Login</h5>
+                <form>
+                    <div class="form-group">
+                      <label for="user-email">Email address</label>
+                      <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="user-pwd">Password</label>
+                      <input type="password" class="form-control" id="user-pwd" placeholder="Password" required>
+                    </div>
+                    <button type="button" id="user-login" class="btn btn-outline-secondary" onclick="login(this.id);">Login</button>
+                    <user-status></user-status>
+                </form>
+            </div>
+            <div class="login" id="admin-login">
+                <h5>Admin Login</h5>
+
+                <form>
+                    <div class="form-group">
+                      <label for="admin-email">Admin Email ID</label>
+                      <input type="text" class="form-control" id="admin-email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="admin-pwd">Password</label>
+                      <input type="password" class="form-control" id="admin-pwd" placeholder="Password" required>
+                    </div>
+                    <button type="button" id="admin-login" class="btn btn-outline-secondary" onclick="login(this.id);">Login</button>
+                    <admin-status></admin-status>
+                </form>
+            </div>
+            {%endblock%}
+        </div>
+    </body>
+    <script type="text/javascript" src="{%static 'js/logincheck.js'%}"></script>
+{%endblock%}

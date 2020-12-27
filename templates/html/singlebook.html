@@ -1,0 +1,50 @@
+{%extends 'html/userindex.html'%}
+{%load static%}
+{%block content%}
+<body>
+    <navbar class="navbar navbar-expand-md fixed-top" style="background-color:#d99058;">
+         
+     <a class="navbar-brand nav-bar-text" href="#" style="font-size:25px;color:white;">Book Management System</a>
+         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+         
+           <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <p style="font-size:18px;color:white;padding-right:10px;padding-top:10px;" onclick="admindashboard();">Dashboard</p>
+              </li>
+             <li class="nav-item">
+                <a class="nav-link nav-bar-text" href="../" style="font-size:18px;color:white;">Logout</a>
+             </li>
+            </ul>
+         </div>
+       </navbar>
+
+    {%block display%}
+    <p style="margin-top:7%;margin-left:40%;">Hello User: <i id="emid">{{email}}</i></p>
+              
+    <div style="padding-top: 10%;padding-left:10%;display:flex;"> 
+   
+        <div id="image-display">
+            <img src="{{coverpic}}" style="width: 200px;height:250px;">
+        </div>
+        <div style="margin-left: 30%;">
+            <table class="table table-striped">
+                <tbody id="book-table">
+                    <th>Details</th>
+                    <tr><td id="title">Title: {{title}}</td></tr>
+                    <tr><td id="author">Author: {{author}}</td></tr>
+                    <tr><td id="genre">Genre: {{genre}}</td></tr>
+                    <tr><td id="price">Price: {{price}}</td></tr>
+                    <tr><td id="isbn">ISBN: {{isbn}}</td></tr>   
+                    <tr><td id="ecopy">Ecopy: {{ecopy}}</td></tr>
+                    <tr><td id="isavail">Is Available? : {{isavail}}</td></tr>
+                    <tr><td id="lended-by">Lended by: {{lended_by}}</td></tr>
+                    <tr><td id="reserved-by">Reserved by: {{reserved_by}}</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <button class="btn btn-primary" onclick="bookreserve();">Reserve</button>
+    <err-status></err-status>
+    {%endblock%}
+</body>
+{%endblock%}

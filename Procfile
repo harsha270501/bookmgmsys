@@ -1,0 +1,1 @@
+web: gunicorn bookmgmsys.wsgi --log-file -

@@ -1,0 +1,61 @@
+{%extends 'index.html'%}
+{%load static%}
+{%block links%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{%static 'css/userindex.css'%}">
+{%endblock%}
+
+{%block content%}
+<body>
+    <navbar class="navbar navbar-expand-md fixed-top" style="background-color:#d99058;">
+         
+     <a class="navbar-brand nav-bar-text" href="#" style="font-size:25px;color:white;">Book Management System</a>
+         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+         
+           <ul class="navbar-nav ml-auto">
+             <li class="nav-item">
+               <p style="font-size:18px;color:white;padding-right:10px;padding-top:10px;" onclick="admindashboard();">Dashboard</p>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link nav-bar-text" href="../" style="font-size:18px;color:white;">Logout</a>
+             </li>
+            </ul>
+         </div>
+       </navbar>
+
+       {%block display%}
+              <p style="margin-top:7%;margin-left:40%;">Hello Admin: <i id="emid">{{email}}</i></p>
+              <div class="searchbar" id="search-bar">
+                  <input type="text" id="search-box" style="display: inline-block;">
+                  <button type="submit" id="search-button" onclick="dispusers();"><i class="fa fa-search"></i></button>
+              </div>
+              <div style="margin-top: 10%;padding-left: 55%;display:flex;">
+                  <button id="delete-option" class="btn btn-danger" onclick="deleteusers();" style="margin-left: 5%;">DELETE USERS</button>
+                  <button id="delete-option" class="btn btn-danger" onclick="adminusers();" style="margin-left: 5%;">MAKE SESLECTED USERS ADMIN</button>
+              </div>
+              <div id="book-list" style="margin-top: 1%;padding-left: 6%;padding-right:5%;">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Admin</th>
+                    </tr>
+                  </thead>
+                  <tbody id="book-table">
+                    {%for user in users%}
+                    <tr>
+                      <td><input type="checkbox" id="{{user.email}}" onchange="adddel(this.id);"></td>
+                      <td onclick="tableclick(this);">{{user.email}}</td>  
+                      <td>{{user.name}}</td>
+                      <td>{{user.isadmin}}</td>
+                    </tr>
+                    {%endfor%}
+                  </tbody>
+                </table>
+              </div>
+      {%endblock%} 
+       </body>
+       <script type="text/javascript" src="{%static 'js/mgmusers.js'%}"></script>
+{%endblock%}

@@ -1,0 +1,50 @@
+#search-bar{
+  margin-top: 25px;
+  margin-left: 27%;
+  width: 50%;
+  height: 50%;
+}
+  
+
+  /* Style the search field */
+  #search-box{
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  #search-button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #d99058;;
+    color: white;
+    font-size: 17px;
+    border: 1px solid #d99058;;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  #search-button:hover {
+    background: #9a9897;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  #book-list{
+    margin-top: 50px;
+    margin-left: 5%;
+  }
+
+  table{
+    padding-top: 20%;
+  }

@@ -1,0 +1,59 @@
+{%extends 'html/login.html'%}
+{%load static%}
+{%block links%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/loginstyles.css'%}">
+{%endblock%}
+
+{%block content%}
+
+    <body>
+        <div class="page" id="login-pages" style="margin-top:20px;height:90%;">
+            {%block login-page%}
+            <div class="login" id="bookentry" style="padding-top: 20px;padding-left:100px;">
+                <h5 style="margin-left: 35%;">Book Entry</h5>
+            
+                <div style="margin-left: 10%;">
+                    <div style="width:500px;">
+                        <div>
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title">
+                                </div>
+                            <div class="form-group">
+                                <label for="author">Author</label>
+                                <input type="text" class="form-control" id="author">
+                            </div>
+                            <div class="form-group">
+                                <label for="isbn">ISBN</label>
+                                <input type="text" class="form-control" id="isbn">
+                            </div>
+                            <div class="form-group">
+                                <label for="genre">Genre</label>
+                                <input type="text" class="form-control" id="genre"">
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="text" class="form-control" id="price">
+                            </div>
+                            <div class="form-group">
+                                <label for="ecopy">Ecopy</label>
+                                <input type="text" class="form-control" id="ecopy">
+                            </div>
+                            <div class="form-group">
+                                <label for="coverpic">Coverpicture URL</label>
+                                <input type="text" class="form-control" id="coverpic">
+                            </div>
+                        </div>
+                        
+                        <div style="margin-left: 30%;padding-top:2%;">
+                            <button class="btn btn-primary" onclick="insertbook();">Insert</button>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            {%endblock%}   
+        </div>
+    </body>
+    <script type="text/javascript" src="{%static 'js/mgmbook.js'%}"></script>
+{%endblock%}
+

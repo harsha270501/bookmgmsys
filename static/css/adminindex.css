@@ -1,0 +1,25 @@
+#dashboard{
+    display: flex;
+    padding-top: 2%;
+}
+
+#email{
+    padding-top: 10%;
+    padding-left: 30%;
+}
+
+#manage-books{
+    background-color: #d95861;
+    color: white;
+    text-align: center;
+    padding: 5% 5%;
+    margin-left: 20%;
+}
+
+#manage-users{
+    background-color: #d9d158;
+    color: white;
+    text-align: center;
+    padding: 5% 5%;
+    margin-left: 10%;
+}
